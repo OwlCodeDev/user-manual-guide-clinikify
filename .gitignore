@@ -1,0 +1,12 @@
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+
+# Node (script de captura)
+scripts/node_modules/
+scripts/package-lock.json
+
+# OS
+.DS_Store

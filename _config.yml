@@ -1,0 +1,76 @@
+# ---------------------------------------------------------------------------
+# Manual do Usuário · Clinikify
+# Site Jekyll com o tema Just the Docs.
+# Serve localmente com ./serve.sh (via Docker, sem instalar Ruby).
+# ---------------------------------------------------------------------------
+
+title: Manual do Usuário · Clinikify
+description: >-
+  Guia de uso do Clinikify para clínicas e consultórios — agenda, prontuário
+  eletrônico, faturamento, repasses e configurações.
+lang: pt-BR
+
+# Tema
+theme: just-the-docs
+
+# Em ambiente local deixamos url/baseurl vazios. Para publicar em um
+# subdiretório (ex.: GitHub Pages em /user-manual-guide-clinikify) basta
+# ajustar `baseurl`.
+url: ""
+baseurl: ""
+
+# --- Just the Docs ---------------------------------------------------------
+
+# Busca client-side (Lunr) — indexa títulos e conteúdo.
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 3
+  tokenizer_separator: /[\s\-/]+/
+
+# Âncoras automáticas nos cabeçalhos.
+heading_anchors: true
+
+# Esquema de cores (light | dark). Trocável pelo usuário no canto.
+color_scheme: light
+
+# Navegação compacta na lateral.
+nav_sort: case_insensitive
+
+# Links auxiliares no topo direito.
+aux_links:
+  "Voltar ao Clinikify":
+    - "https://clinikify.com"
+aux_links_new_tab: true
+
+# Rodapé "última atualização" por página.
+last_edit_timestamp: true
+last_edit_time_format: "%d/%m/%Y"
+
+# Botão "editar esta página" desativado por enquanto (sem repo remoto).
+# gh_edit_link: false
+
+# Conteúdo do rodapé.
+footer_content: >-
+  © 2026 OWLCode · Clinikify. Manual do usuário. Uso interno e de clientes.
+
+# Coletâpse da navegação por padrão.
+# collapse_inactive_chapters: true
+
+# --- Jekyll ----------------------------------------------------------------
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - scripts
+  - node_modules
+  - serve.sh
+  - README.md
+  - "*.config.*"

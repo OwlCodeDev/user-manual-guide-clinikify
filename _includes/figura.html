@@ -1,0 +1,30 @@
+{%- comment -%}
+  Renderiza um print de tela com legenda.
+
+  Uso:
+    {% include figura.html src="agenda/agenda-visao-semana.png"
+                           alt="Tela da Agenda"
+                           legenda="Visão semanal da Agenda" %}
+
+  Se o arquivo ainda não existe em assets/images/, mostra um placeholder
+  indicando que a captura está pendente — assim o manual não quebra antes
+  de rodar o script de prints.
+{%- endcomment -%}
+{%- assign caminho = "/assets/images/" | append: include.src -%}
+{%- assign existe = false -%}
+{%- for f in site.static_files -%}
+  {%- if f.path == caminho -%}{%- assign existe = true -%}{%- break -%}{%- endif -%}
+{%- endfor -%}
+<figure class="tela">
+{%- if existe -%}
+  <a href="{{ caminho | relative_url }}" target="_blank" rel="noopener">
+    <img src="{{ caminho | relative_url }}" alt="{{ include.alt | default: include.legenda }}" loading="lazy">
+  </a>
+{%- else -%}
+  <div class="tela-placeholder">
+    <span class="tela-placeholder__icone">🖼️</span>
+    <span class="tela-placeholder__texto">Print pendente — <code>{{ include.src }}</code></span>
+  </div>
+{%- endif -%}
+{%- if include.legenda -%}<figcaption>{{ include.legenda }}</figcaption>{%- endif -%}
+</figure>
