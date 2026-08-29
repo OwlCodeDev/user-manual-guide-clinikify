@@ -16,7 +16,7 @@ theme: just-the-docs
 # Em ambiente local deixamos url/baseurl vazios. Para publicar em um
 # subdiretório (ex.: GitHub Pages em /user-manual-guide-clinikify) basta
 # ajustar `baseurl`.
-url: ""
+url: "https://ajuda.clinikify.com"
 baseurl: ""
 
 # --- Just the Docs ---------------------------------------------------------

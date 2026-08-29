@@ -22,13 +22,18 @@ Paciente (PEP)** — o histórico clínico completo de cada pessoa.
 
 ## A ficha do paciente (Hub)
 
-Ao abrir um paciente, você acessa o **Hub**, com abas para:
+Ao abrir um paciente, você acessa a **página do paciente**, organizada em
+três colunas:
 
-- **Dados cadastrais** — informações pessoais e de contato.
-- **[Prontuário](prontuario.html)** — notas clínicas e documentos.
-- **[Odontograma](odontograma.html)** — mapa dental (clínicas odontológicas).
-- **[Planos de tratamento](planos-de-tratamento.html)** — procedimentos
-  planejados e sua execução.
+- **Histórico** (esquerda) — a linha do tempo com as evoluções e as
+  anamneses respondidas pelo paciente (selo **Paciente**).
+- **[Prontuário](prontuario.html)** (centro) — o editor de evoluções, o
+  [odontograma](odontograma.html) e os documentos clínicos.
+- **Ações** (direita) — seções recolhíveis de Retornos,
+  [Exames de imagem](exames-de-imagem.html) e
+  [Planos de tratamento](planos-de-tratamento.html), cada uma com um
+  botão **+** para a ação principal. Os dados cadastrais ficam no botão
+  **Ver dados**, no topo.
 
 ## Privacidade e LGPD
 

@@ -15,7 +15,8 @@ estruturado) configurado pela clínica.
 
 ## Criar uma nota
 
-1. No prontuário do paciente, clique em **Nova nota**.
+1. No prontuário do paciente, clique em **Nova evolução** (no topo da
+   coluna Histórico ou na coluna de Ações, à direita).
 2. Escolha um **modelo** (se houver) ou escreva em texto livre.
 3. Preencha os campos.
 4. **Salve** ou **assine**.
@@ -37,3 +38,17 @@ entre os profissionais. Configure-os em
 Um aditamento é uma nova entrada vinculada à nota original. Use quando precisar
 adicionar uma informação que faltou ou registrar uma correção — sem apagar o
 conteúdo anterior.
+
+## Anamneses respondidas pelo paciente
+
+Quando o paciente responde uma anamnese pelo link enviado a ele (veja
+[Anamnese pelo paciente](anamnese-do-paciente.html)), a resposta aparece na
+coluna Histórico junto com as evoluções, marcada com o selo **Paciente**.
+
+1. Clique na anamnese na linha do tempo para abri-la em modo leitura.
+2. Se quiser aproveitar as respostas, clique em **Usar na evolução** — isso
+   cria uma nova evolução já preenchida com o que o paciente respondeu,
+   para você revisar e assinar.
+
+A resposta do paciente, por si só, nunca vira uma nota do prontuário — só a
+evolução que você criar e assinar a partir dela.
