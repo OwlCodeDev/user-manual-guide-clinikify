@@ -31,6 +31,19 @@ Quem entra como **profissional** (médico ou dentista) também vê:
   documentos.
 - **Meus documentos** — documentos clínicos que você emitiu.
 
+## Guias do sistema
+
+No menu do seu perfil (canto superior direito) está **Guias do sistema**:
+passeios curtos, com destaque na tela, que apresentam cada área. Há uma
+**Visão geral** e um guia por módulo que a sua clínica usa — Agenda,
+Pacientes e prontuário, Odontograma (clínicas odontológicas), Faturamento e
+Configurações. Nada é alterado enquanto o guia roda; use **Avançar** e
+**Voltar**, ou feche com o X.
+
+Para quem administra uma clínica recém-criada, o mesmo menu mostra
+**Primeiros passos**: um guia que configura o essencial junto com você
+(profissional, serviço, paciente e agenda) e some quando o checklist termina.
+
 ## Por onde começar
 
 1. **Cadastre a clínica** (se ainda não tiver conta) — veja
