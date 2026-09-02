@@ -289,6 +289,8 @@ async function main() {
       before: (p) => clickButtonByText(p, ['convidar', 'novo membro', 'adicionar']),
     });
     await capture(page, '/app/configuracoes/faturamento', 'configuracoes/faturamento-config.png');
+    // Taxas de maquininha (card no fim da mesma página; Vitalis não tem
+    // taxas semeadas, então o print sai do clinica-demo — grupo pep).
     await capture(page, '/app/configuracoes/profissionais', 'configuracoes/profissionais-lista.png');
     await capture(page, '/app/configuracoes/profissionais', 'configuracoes/profissional-detalhe.png', {
       before: (p) =>
@@ -488,15 +490,29 @@ async function main() {
       },
     });
 
-    // Odontograma (nota assinada da Ana Costa).
+    // Odontograma central (área do paciente — Ana Costa): mapa + histórico.
     await capture(page, null, 'pacientes/odontograma.png', {
+      before: async (p) => {
+        await openPatientHub(p, 'Ana');
+        await p.waitForURL(/\/app\/pacientes\/[0-9a-f-]{36}/, { timeout: 10000 });
+        const url = new URL(p.url());
+        await p.goto(`${url.origin}${url.pathname.replace(/\/$/, '')}/odontograma`, {
+          waitUntil: 'networkidle',
+        });
+        await p.locator('clinikify-odontogram-panel .odontogram-svg svg').first().waitFor({ timeout: 15000 });
+        await p.waitForTimeout(500);
+      },
+    });
+
+    // Odontograma na evolução assinada: "Esta consulta" × "Boca completa".
+    await capture(page, null, 'pacientes/odontograma-evolucao.png', {
       before: async (p) => {
         await openPatientHub(p, 'Ana');
         await p.locator('clinikify-pep-timeline li button:has-text("Template")').first().click();
         await p.waitForURL(/\/prontuario\/[0-9a-f-]{36}/, { timeout: 10000 });
-        const svg = p.locator('clinikify-odontogram-renderer .odontogram-svg svg').first();
-        await svg.waitFor({ timeout: 15000 });
-        await svg.scrollIntoViewIfNeeded();
+        const scope = p.getByTestId('template-odontogram-scope');
+        await scope.waitFor({ timeout: 15000 });
+        await scope.scrollIntoViewIfNeeded();
         await p.waitForTimeout(500);
       },
     });
@@ -523,6 +539,15 @@ async function main() {
     console.log(`${C.step} Login clinica-demo ADMIN (admin@demo.com.br)`);
     await resetSession(context, page);
     await login(page, 'admin@demo.com.br', DEMO.password);
+    // Taxas de maquininha (clinica-demo tem 5 faixas semeadas).
+    await capture(page, '/app/configuracoes/faturamento', 'configuracoes/taxas-maquininha.png', {
+      before: async (p) => {
+        const card = p.getByTestId('card-fee-rules');
+        await card.waitFor({ timeout: 15000 });
+        await card.scrollIntoViewIfNeeded();
+        await p.waitForTimeout(400);
+      },
+    });
 
     await capture(page, null, 'portal-do-paciente/comunicacao-status.png', {
       before: async (p) => {
