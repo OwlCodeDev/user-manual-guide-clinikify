@@ -24,6 +24,7 @@ has_children: true
 | [Faturamento](faturamento.html) | Regras de divisão (repasses) e visibilidade. |
 | [Profissionais](profissionais.html) | Cadastro de médicos/dentistas e grades de horário. |
 | [Convênios](convenios.html) | Convênios e planos atendidos. |
+| [Conta, privacidade e encerramento](conta-e-lgpd.html) | Seus dados de acesso, consentimento de campanhas, exportação e encerramento da conta. |
 
 <div class="dica" markdown="1">
 💡 Em uma clínica nova, configure nesta ordem: **Perfil → Serviços →
