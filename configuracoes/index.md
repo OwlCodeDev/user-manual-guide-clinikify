@@ -25,6 +25,7 @@ has_children: true
 | [Profissionais](profissionais.html) | Cadastro de médicos/dentistas e grades de horário. |
 | [Convênios](convenios.html) | Convênios e planos atendidos. |
 | [Conta, privacidade e encerramento](conta-e-lgpd.html) | Seus dados de acesso, consentimento de campanhas, exportação e encerramento da conta. |
+| [Comunicação e WhatsApp](comunicacao.html) | Confirmação automática de consulta e as respostas do assistente no WhatsApp. |
 
 <div class="dica" markdown="1">
 💡 Em uma clínica nova, configure nesta ordem: **Perfil → Serviços →
